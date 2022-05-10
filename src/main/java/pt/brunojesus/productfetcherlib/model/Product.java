@@ -5,6 +5,12 @@ import lombok.Data;
 
 import java.util.List;
 
+/**
+ * Product representation returned by the {@link pt.brunojesus.productfetcherlib.parser.Parser}
+ *
+ * @author Bruno Jesus
+ * @since 1.0
+ */
 @Data
 @Builder
 public class Product {

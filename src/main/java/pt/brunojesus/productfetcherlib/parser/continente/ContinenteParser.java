@@ -7,7 +7,6 @@ import org.apache.commons.lang3.StringUtils;
 import pt.brunojesus.productfetcherlib.model.Product;
 import pt.brunojesus.productfetcherlib.parser.Parser;
 import pt.brunojesus.productfetcherlib.parser.continente.model.ContinenteProduct;
-import pt.brunojesus.productfetcherlib.util.HttpDownload;
 import pt.brunojesus.productfetcherlib.util.XPathParser;
 
 import java.util.HashMap;
@@ -15,6 +14,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Parser for Continente store (<a href="https://continente.pt">https://continente.pt</a>)
+ * <br>
+ * Gathers information from a product page on Continente's website and returns it as a {@link Product} wrapped in an
+ * {@link Optional}
+ *
+ * @author Bruno Jesus
+ * @since 1.0
+ */
 public class ContinenteParser implements Parser {
 
     private static final String XPATH_PRODUCT_JSON = "//script[@type=\"application/ld+json\"]";
@@ -28,6 +36,9 @@ public class ContinenteParser implements Parser {
         this.objectMapper = new ObjectMapper();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Optional<Product> apply(String productUrl) {
         String rawLdJson = getRawJson(productUrl);
@@ -130,7 +141,7 @@ public class ContinenteParser implements Parser {
         return queryMap.get("ean");
     }
 
-    public static Map<String, String> getQueryMap(String query) {
+    private static Map<String, String> getQueryMap(String query) {
         String[] params = query.split("&");
         Map<String, String> map = new HashMap<String, String>();
 

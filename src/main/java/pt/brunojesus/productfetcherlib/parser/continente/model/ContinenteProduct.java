@@ -6,6 +6,12 @@ import lombok.Data;
 
 import java.util.List;
 
+/**
+ * Representation of a product from Continente's store
+ *
+ * @author Bruno Jesus
+ * @since 1.0
+ */
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ContinenteProduct {

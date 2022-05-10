@@ -12,6 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
+/**
+ * Executes XPath expressions on HTML content
+ *
+ * @author Bruno Jesus
+ * @since 1.0
+ */
 public class XPathParser {
 
     private Document document;
@@ -21,11 +27,23 @@ public class XPathParser {
         this.download = download;
     }
 
+    /**
+     * Downloads a page into the parser
+     *
+     * @param url the page to download
+     * @return the {@link XPathParser} itself
+     */
     public XPathParser fromURL(String url) {
         this.document = retrieveHTML(url, download);
         return this;
     }
 
+    /**
+     * Loads an HTML string into the parser
+     *
+     * @param html the HTML page contents as {@link String}
+     * @return the {@link XPathParser} itself
+     */
     public XPathParser fromHTML(String html) {
         this.document = createDocumentFromHtml(html);
         return this;
@@ -181,7 +199,7 @@ public class XPathParser {
     /**
      * Retrieve HTML.
      *
-     * @param url   the url
+     * @param url the url
      * @return the document
      */
     private Document retrieveHTML(String url, Function<URL, byte[]> downloadFunction) {
