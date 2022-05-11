@@ -27,7 +27,7 @@ public class ParserFactory {
      * @return the new parser of the type parserClass
      * @see ContinenteParser
      */
-    public Parser getParser(Class<Parser> parserClass) {
+    public Parser getParser(Class<? extends Parser> parserClass) {
         if (parserClass.equals(ContinenteParser.class)) {
             return new ContinenteParser(xPathParser);
         }

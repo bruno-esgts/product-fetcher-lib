@@ -46,4 +46,11 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>mvn-brunojesus</id>
+            <name>Bruno Jesus MVN Repo</name>
+            <url>https://mvn.brunojesus.pt/releases</url>
+        </repository>
+    </distributionManagement>
 </project>

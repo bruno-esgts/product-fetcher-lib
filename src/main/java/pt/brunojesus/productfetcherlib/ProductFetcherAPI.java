@@ -30,7 +30,7 @@ public class ProductFetcherAPI {
      *
      * @see pt.brunojesus.productfetcherlib.parser.continente.ContinenteParser
      */
-    public Optional<Product> fetchProduct(String productUrl, Class<Parser> parserClass) {
+    public Optional<Product> fetchProduct(String productUrl, Class<? extends Parser> parserClass) {
         final Parser parser = parserFactory.getParser(parserClass);
 
         if (parser == null) {
