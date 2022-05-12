@@ -81,6 +81,6 @@ Since this library is not on Maven Central you will also need to add the followi
 <repository>
   <id>mvn-brunojesus</id>
   <name>Bruno Jesus MVN Repo</name>
-  <url>https://mvn.brunojesus.pt/{repository}</url>
+  <url>https://mvn.brunojesus.pt/releases</url>
 </repository>
 ```
