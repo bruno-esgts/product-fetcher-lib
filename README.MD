@@ -14,7 +14,7 @@ websites.
 package pt.brunojesus.productfetcherlib;
 
 import org.apache.commons.lang3.StringUtils;
-import pt.brunojesus.productfetcherlib.parser.continente.ContinenteParser;
+import pt.brunojesus.productfetcherlib.parser.ParserEnum;
 
 public class Main {
 
@@ -23,7 +23,7 @@ public class Main {
 
         productFetcherAPI.fetchProduct(
                 "https://www.continente.pt/produto/pasta-de-dentes-protecao-total-original-colgate-6456840.html",
-                ContinenteParser.class
+                ParserEnum.Continente
         ).ifPresentOrElse(product -> {
                     System.out.println("-------- Product -----------");
                     System.out.println("Brand: " + product.getBrand());
@@ -72,7 +72,7 @@ Add this dependency to your `pom.xml` file
 <dependency>
   <groupId>pt.brunojesus</groupId>
   <artifactId>productfetcher-lib</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 ```
 
