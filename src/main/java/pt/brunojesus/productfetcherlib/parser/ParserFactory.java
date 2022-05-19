@@ -23,15 +23,18 @@ public class ParserFactory {
     /**
      * Creates a new parser according to the given parserClass
      *
-     * @param parserClass the parser type to be created
+     * @param parser the parser to be created
      * @return the new parser of the type parserClass
      * @see ContinenteParser
      */
-    public Parser getParser(Class<? extends Parser> parserClass) {
-        if (parserClass.equals(ContinenteParser.class)) {
-            return new ContinenteParser(xPathParser);
+    public Parser getParser(final ParserEnum parser) {
+        switch (parser) {
+            case Continente -> {
+                return new ContinenteParser(xPathParser);
+            }
+            default -> {
+                return null;
+            }
         }
-
-        return null;
     }
 }
